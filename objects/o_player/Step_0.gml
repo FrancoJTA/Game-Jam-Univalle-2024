@@ -1,4 +1,4 @@
-if(!dead){
+if(!dead && !animation){
 // ------- INPUT ------
 
 	if (keyboard_check(ord("D")))
@@ -51,13 +51,22 @@ if(!dead){
 		
 			else y_speed = -jump_power;
 		}
+		else if (!ground && pow_jump) {
+			jump_down = 1;
+			y_speed = 16;  
+		}
 	}
 	if (keyboard_check_released(vk_space))
 	{
 		if(y_speed < 0) y_speed = 0;	
 	}
 
+// --------- HOOK -----------
 
+	
+	if(theworld=="disco")c_hook();
+	
+	
 // ------- MOVIMIENTO -------
 	if(x_speed != 0)
 	{
@@ -116,14 +125,23 @@ if(!dead){
 		case "start":
 			
 		break;
+		case "lego":
+			c_lego();
+		break;
+		case "disco":
+			c_disco();
+		break;
+		case "cementery":
+			c_cementery();
+		break;
 	}	
 }
-else{
+else if(!animation && dead){
 	image_alpha-=0.0075;
 	if(image_alpha<=0){
 		hp=hpMax;
 		dead=0;
 		invi=0;
+		image_alpha=1;
 	}
-
 }

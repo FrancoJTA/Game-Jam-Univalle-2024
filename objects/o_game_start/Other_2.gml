@@ -1,0 +1,20 @@
+global.p_hit = part_type_create();
+part_type_shape(global.p_hit,pt_shape_square);
+part_type_size(global.p_hit,0.04,0.07,0,0);
+part_type_color2(global.p_hit,65535,33023);
+part_type_alpha3(global.p_hit,1,1,0);
+part_type_speed(global.p_hit,0.70,1.50,-0.05,0);
+part_type_direction(global.p_hit,0,359,0,0);
+part_type_blend(global.p_hit,1);
+part_type_life(global.p_hit,15,30);
+
+global.p_magnum = part_type_create();
+part_type_shape(global.p_magnum,pt_shape_sphere);
+part_type_size(global.p_magnum,0.10,0.10,0,0);
+part_type_scale(global.p_magnum,1,1);
+part_type_color2(global.p_magnum,65535,8421631);
+part_type_alpha2(global.p_magnum,1,0);
+part_type_speed(global.p_magnum,0,0.50,0,0);
+part_type_orientation(global.p_magnum,0,0,0,0,1);
+part_type_blend(global.p_magnum,1);
+part_type_life(global.p_magnum,10,10);
